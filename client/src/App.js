@@ -50,21 +50,6 @@ class App extends React.Component {
     })
   }
 
-  handleMessage = (msg) => {
-    // console.log(msg)
-    switch (msg.type) {
-      case 'message':
-        break
-      case 'peer':
-        break
-      case 'count':
-        this.updateCount(msg.data)
-        break
-      default:
-        break
-    }
-  }
-
   handleIncomingStream = (stream) => {
     this.setRemoteStream(stream)
   }
@@ -73,13 +58,6 @@ class App extends React.Component {
     this.setState({
       messages: [...this.state.messages, { type: 'remote', text: String(data) }]
     })
-  }
-
-  handlePeerDisconnect = (peerId) => {
-    if (peerId === this.peer.id) {
-      this.peer = null
-      this.connection.discover()
-    }
   }
 
   getUserMedia = async () => {
