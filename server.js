@@ -14,7 +14,7 @@ router.get('/*', (_, res) => {
 app.use(express.static((path.join(__dirname, 'client', 'build'))))
 app.use('/', router)
 
-server.listen(process.env.PORT || 80)
+server.listen(process.env.PORT || 3030)
 
 // Socket server
 
